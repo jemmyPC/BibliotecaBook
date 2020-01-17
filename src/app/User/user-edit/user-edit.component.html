@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Edit User </h1>
+
+      <div class="form-group">
+        <label for="Email">Email</label>
+        <input [(ngModel)]="newUser.email" type="email" class="form-control" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Password">Password</label>
+        <input [(ngModel)]="newUser.password" type="password" class="form-control" id="password">
+      </div>
+
+      <button (click)="print()" class="btn btn-primary">Save</button>
+
+</div>

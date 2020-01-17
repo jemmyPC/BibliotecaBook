@@ -1,0 +1,39 @@
+<br>
+  
+
+<div class="jumbotron jumbotron-fluid-x-sm" Style="position:inherit">
+    <div class="container">
+      <h1 class="display-2">Books Loan...<br> Only Can Get 3 Books per Person ! </h1>
+      <p class="lead">Enjoy</p>
+      <hr class="my-2">
+      <p>Back Back</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="http://localhost:4200/Loan" role="button">Go Back</a>
+      </p>
+    </div>
+</div>
+
+  
+  <div class="jumbotron jumbotron-fluid-x-sm">
+    <div class="btn-group btn-group-lg">
+
+      <label for="loan.UserID">User</label>
+      <select [(ngModel)]="loan.UserID" id="cmbUser  ">
+        <option value="">-Select user-</option>
+        <option *ngFor="let item of users" value="{{item.id}}">{{item.name}}</option>
+      
+      </select>
+
+      <label for="loan.IdBook">Tittle</label>
+      <select  [(ngModel)]="loan.IdBook"  id="cmbBook">
+          <option value="">-Select book-</option>
+          <option *ngFor="let item of books" value="{{item.id}}">{{item.title}}</option>
+         
+       
+        </select>
+
+      <br>
+      <button (click)="save()" class="btn btn-primary btn-lg btn-block">SAVE</button>
+    </div>
+    <span >{{err["errLoan"]}}</span>
+  </div>

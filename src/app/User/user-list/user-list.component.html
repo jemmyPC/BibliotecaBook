@@ -1,0 +1,54 @@
+<div>
+  <br>
+  <a href="http://localhost:4200/User/Create" class="btn btn-danger  btn-lg btn-block" role="button" aria-pressed="true">NEW USER</a>
+  <br>
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-3">Lets Get Your Book!</h1>
+      <p class="lead">Dont Forget Don't Repeat your CURP and UserName when Add a new User!</p>
+      <hr class="my-2">
+      <p>CURP only 18 Digits </p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="http://localhost:4200/Home" role="button">Go Back HOME ! </a>
+      </p>
+    </div>
+  </div>
+  
+  
+  <div class="jumbotron jumbotron-fluid-x-sm">
+<div class="table-responsive-sm">
+
+    <table class="table">
+
+        <thead class="table-danger">
+            <tr class="responsive-sm">
+              <th>Name</th>
+              <th>LastName</th>
+              <th>CURP</th>
+              <th>Email</th>
+              <th>UserName</th>
+
+            
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of users">
+              <td>{{row.name}}</td>
+              <td>{{row.lastName}}</td>
+              <td>{{row.curp}}</td>
+              <td>{{row.email}}</td>
+              <td>{{row.userName}}</td>
+
+               | <a  (click)="showEdit(row.id)"class="btn btn-primary btn-lg" 
+              href="http://localhost:4200/User/Edit/{{row.id}}" role="button">EDIT</a>
+              
+              | <a  (click)="showEdit(row.id)"class="btn btn-danger " 
+              href="http://localhost:4200/User/Detail/{{row.id}}" role="button">DETAILS</a> |
+            </tr>
+          </tbody>
+    </table>
+  </div>
+
+</div>

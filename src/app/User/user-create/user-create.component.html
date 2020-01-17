@@ -1,0 +1,67 @@
+
+<br>
+  
+
+<div class="jumbotron jumbotron-fluid-x-sm" Style="position:inherit">
+    <div class="container">
+      <h1 class="display-2">User... Dont Repeat your CURP AND UserName ! </h1>
+      <p class="lead">Enjoy</p>
+      <hr class="my-2">
+      <p>Back Back</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="http://localhost:4200/User" role="button">Go Back</a>
+      </p>
+    </div>
+</div>
+
+  
+  <div class="jumbotron jumbotron-fluid-x-sm">
+
+    <div class="form-row">
+
+      <div class="form-group col-md-5">
+        <label for="Name">Name</label>
+        <input [(ngModel)]="newUser.Name" type="text" class="form-control" id="Name" placeholder="Your Name" >
+        <span >{{err["errName"]}}</span>
+      </div>
+
+      <div class="form-group col-md-5">
+        <label for="LastName">LastName</label>
+        <input [(ngModel)]="newUser.LastName" type="text" class="form-control" id="LastName"  placeholder="Last Name">
+        <span >{{err["errLastName"]}}</span>
+      </div>
+    
+
+        <div class="form-group col-md-5">
+            <label for="CURP">CURP</label>
+            <input [(ngModel)]="newUser.CURP" ngModel type="text" class="form-control" id="CURP" placeholder="only 18 digits">
+            <span >{{err["errCURP"]}}</span>
+          </div>
+
+        <div class="form-group col-md-5">
+            <label for="Email">Email</label>
+            <input [(ngModel)]="newUser.Email" type="email" class="form-control" id="Email" placeholder="Email">
+            <span >{{err["errEmail"]}}</span>
+          </div>
+
+
+        <div class="form-group col-md-5">
+            <label for="UserName">UserName</label>
+            <input  [(ngModel)]="newUser.UserName" type="text" class="form-control" id="UserName" placeholder="User Name">
+            <span >{{err["errUserName"]}}</span>
+          </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Password">Password</label>
+                <input [(ngModel)]="newUser.Password" type="password" class="form-control" id="Password">
+                <span >{{err["errPassword"]}}</span>
+              </div>
+        </div>
+
+     
+    
+      <button (click)="print()" class="btn btn-primary">Save</button>
+    </div>
+
+</div>

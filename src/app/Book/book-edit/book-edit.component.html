@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Edit Book</h1>
+
+  <div class="form-group">
+    <label for="Id">Id Book</label>
+    <input [(ngModel)]="newBook.id" type="number" class="form-control" id="id" disabled>
+  </div>
+
+  <div class="form-group">
+    <label for="Description">Description</label>
+    <input [(ngModel)]="newBook.description" type="text" class="form-control" id="description">
+  </div>
+
+  <button (click)="print()" class="btn btn-success">Save</button>
+
+
+</div>

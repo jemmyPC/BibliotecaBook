@@ -1,0 +1,63 @@
+<div>
+  <br>
+  <a href="http://localhost:4200/Book/Create" class="btn btn-danger  btn-lg btn-block" role="button"
+    aria-pressed="true">NEW BOOK</a>
+  <br>
+</div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">You Can Add 10 Books and Get for Loan 3!</h1>
+    <p class="lead">Enjoy your History</p>
+    <hr class="my-2">
+    <p>More Info GO Home</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="http://localhost:4200/Home" role="button">Go Back Home</a>
+    </p>
+  </div>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid-x-sm">
+  <div class="table-responsive-x-sm">
+    <table class="table">
+      <thead class="table-danger">
+        <tr>
+         
+          <th scope="col">ISBN</th>
+          <th scope="col">AUTOR</th>
+          <th scope="col">TITLE</th>
+          <th scope="col">N.PAGES</th>
+          <th scope="col">EDITION</th>
+          <th scope="col">DESCRIPTION</th>
+          <th scope="col">QUANTITY</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of books">
+          
+          <td>{{row.isbn}}</td>
+          <td>{{row.autor}}</td>
+          <td>{{row.title}}</td>
+          <td>{{row.numPages}}</td>
+          <td>{{row.edition}}</td>
+          <td>{{row.description}}</td>
+          <td>{{row.quantity}}</td>
+
+
+          <a  class="btn btn-primary btn-lg" href="http://localhost:4200/Book/Edit/{{row.id}}"
+            role="button">Edit</a>
+
+          | <a  class="btn btn-danger " href="http://localhost:4200/Book/Detail/{{row.id}}"
+            role="button">DETAILS</a> |
+
+            <a (click)="AddBook(row.id)" class="btn btn-danger " role="button"> AddBook</a> |
+
+            
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
