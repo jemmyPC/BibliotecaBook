@@ -12,7 +12,7 @@ export class User {
         Password: string;
         Quantity?: number;
         IsActive?: boolean;
-        IdStatus?: number;
+       
 
 }
 

@@ -1,0 +1,49 @@
+<br>
+
+<a href="http://localhost:4200/Loan/Create" class="btn btn-danger  btn-lg btn-block" role="button" aria-pressed="true">NEW LOAN</a>
+<br>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-3">Integon Books Loans</h1>
+      <p class="lead">Get only 3 Books with out fails!</p>
+      <hr class="my-2">
+      <p>Don't Forget Deliver!</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="http://localhost:4200/Home" role="button">Go Back Home</a>
+      </p>
+    </div>
+  </div>
+  
+  
+  <div class="jumbotron jumbotron-fluid-x-sm">
+
+
+<div class="table-responsive-sm">
+    <table class="table">
+        <thead class="table-danger">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">LastName</th>
+              <th scope="col">Title</th>
+              <th scope="col">DateCreate</th>
+              <th scope="col">DateFinish</th>
+              <th scope="col">STATUS</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of loans">
+              <td>{{row.name}}</td>
+              <td>{{row.lastName}}</td>
+              <td>{{row.title}}</td>
+              <td>{{row.dateCreate}}</td>
+              <td>{{row.dateFinish}}</td>
+              <td>{{row.status}}</td>
+              
+           
+            </tr>
+          </tbody>
+    </table>
+  </div>
+

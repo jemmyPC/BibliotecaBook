@@ -14,51 +14,51 @@ import { Observable, observable } from 'rxjs';
 export class ServiceLoanService {
   constructor(private http: HttpClient) { }
 
-getLoan(){
- return this.http.get(`${environment.BaseUrl}Loan`);
-}
+  getLoan() {
+    return this.http.get(`${environment.BaseUrl}Loan`);
+  }
 
 
 
-getLoanID(id:number){
-   
-  const url = (`${environment.BaseUrl}Loan/${id}`);
-  return this.http.get<Loan>(url);
-}  
+  getLoanID(id: number) {
+
+    const url = (`${environment.BaseUrl}Loan/${id}`);
+    return this.http.get<Loan>(url);
+  }
 
 
 
-putLoan(loan: Loan){
-  const url = (`${environment.BaseUrl}Loan/${loan.Id}`);
-  return this.http.put<Loan>(url,loan);
-}
+  putLoan(loan: Loan) {
+    const url = (`${environment.BaseUrl}Loan/${loan.Id}`);
+    return this.http.put<Loan>(url, loan);
+  }
 
 
-postLoan(loan: Loan){
-  const url = (`${environment.BaseUrl}Loan`);
-  return this.http.post(url, loan);
-}
+  postLoan(loan: Loan) {
+    const url = (`${environment.BaseUrl}Loan`);
+    return this.http.post(url, loan);
+  }
 
 
-putDeliver(loan: Loan) {
-  const url = (`${environment.BaseUrl}Loan`);
-  
-   let data = JSON.parse(JSON.stringify(loan))[0], l = {};
+  putDeliver(loan: Loan) {
+    const url = (`${environment.BaseUrl}Loan`);
 
-   for (const key in data) {
+    let data = JSON.parse(JSON.stringify(loan))[0], l = {};
 
-     if (key != "status") {
+    for (const key in data) {
 
-      l[key] = data[key];
-       
-     }
-   }
+      if (key != "status") {
 
-   l["StatusId"] = 10;
+        l[key] = data[key];
 
-   
-  return this.http.put(url,l);
-}
+      }
+    }
+
+
+
+    return this.http.put(url, l);
+  }
+
 
 }
 

@@ -36,6 +36,7 @@ this.loan = new Loan();
       .subscribe((data) => {
         this.users = data;
         console.log(this.users);
+        
       },(error)=>console.log(error)
       
       );
@@ -57,17 +58,9 @@ this.loan = new Loan();
     console.log(this.loan)
     this.postLoan.postLoan(this.loan).
     subscribe(reponse => {
-      let data = JSON.parse(JSON.stringify(reponse));
-
-      for (const key in this.err) {
-        this.err[key] = "";
-      }        
-      for (const key in data) {
-        this.err["err" + key] = data[key];
-      }
-
-      window.alert("Loan done");
-      this.router.navigateByUrl('/Loan');      
+  window.alert("Loan done");
+  
+        this.router.navigateByUrl('/Loan');
   },
   error => {
     const json = error.error;

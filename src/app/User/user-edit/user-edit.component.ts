@@ -32,6 +32,7 @@ export class UserEditComponent implements OnInit {
     this.postUsers.getUserID(id)
     .subscribe(user => {
       this.newUser = user;
+      console.log("OK");
       console.log(this.newUser);
     }, (error) => console.log(error));
   }
@@ -41,7 +42,8 @@ export class UserEditComponent implements OnInit {
     console.log("******************************");
 
     console.log(this.newUser);
-    this.postUsers.updateUser(this.newUser).subscribe(reponse => {
+    this.postUsers.updateUser(this.newUser).subscribe(response => {
+      console.log(response);
       window.alert("User updated");
       this.router.navigateByUrl('/User')}, error => {console.log("error")}, ()=>{});
  }

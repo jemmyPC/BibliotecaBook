@@ -15,7 +15,7 @@ export class UserCreateComponent implements OnInit {
   userUp = FormGroup
 
 
-  constructor(private postUsers: ServiceUService, private router : Router) { }
+  constructor(private postUsers: ServiceUService, private router: Router) { }
   newUser: User;
   err: object;
 
@@ -30,18 +30,16 @@ export class UserCreateComponent implements OnInit {
   print() {
     this.postUsers.postUsers(this.newUser).subscribe(
       reponse => {
-        let data = JSON.parse(JSON.stringify(reponse));
-        for (const key in this.err) {  this.err[key] = "";}
-        for (const key in data) {  this.err["err" + key] = data[key];}
         window.alert("User added");
-        this.router.navigateByUrl('/User')
+        this.router.navigateByUrl('/User');
       }
       ,
       error => {
+        console.log(error);
         const json = error.error;
         console.log(json);
-        for (const key in this.err) { this.err[key] = "";}
-        for (const key in json) { this.err["err" + key] = json[key];}
+        for (const key in this.err) { this.err[key] = ""; }
+        for (const key in json) { this.err["err" + key] = json[key]; }
       }, () => { });
   }
 

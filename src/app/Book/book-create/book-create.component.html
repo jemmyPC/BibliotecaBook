@@ -20,7 +20,7 @@
 
     <div class="form-group col-md-4">
       <label for="ISBN">ISBN</label>
-      <input [(ngModel)]="newBook.ISBN" required minlength="4" type="number" class="form-control" id="ISBN" placeholder="ISBN">
+      <input [(ngModel)]="newBook.ISBN" required minlength="13" type="number" class="form-control" id="ISBN" placeholder="ISBN">
         <span >{{err["errISBN"]}}</span>
     </div>
 
@@ -58,7 +58,7 @@
       <div class="form-group col-md-6">
         <label for="Description">Description</label>
         <input [(ngModel)]="newBook.Description" type="text" class="form-control" id="Description">
-        <span >{{err["errDescription"]}}</span>
+        <span>{{err["errDescription"]}}</span>
       </div>
     </div>
 
@@ -66,9 +66,10 @@
       <div class="form-group">
         <label for="Quantity">Quantity</label>
         <input [(ngModel)]="newBook.Quantity" type="number" class="form-control" id="Quantity">
-        <span >{{err["errQuantity"]}}</span>
+        <span>{{err["errQuantity"]}}</span>
       </div>
     </div>
+    <br>
     <br>
     <button (click)="print()" class="btn btn-primary" >Save</button>
   </div>

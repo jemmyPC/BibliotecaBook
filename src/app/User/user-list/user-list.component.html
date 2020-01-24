@@ -41,11 +41,13 @@
               <td>{{row.email}}</td>
               <td>{{row.userName}}</td>
 
-               | <a  (click)="showEdit(row.id)"class="btn btn-primary btn-lg" 
+               | <a class="btn btn-primary btn-lg" 
               href="http://localhost:4200/User/Edit/{{row.id}}" role="button">EDIT</a>
               
-              | <a  (click)="showEdit(row.id)"class="btn btn-danger " 
-              href="http://localhost:4200/User/Detail/{{row.id}}" role="button">DETAILS</a> |
+              | <a class="btn btn-danger " 
+              href="http://localhost:4200/User/Details/{{row.id}}" role="button">DETAILS</a> |
+              <a  (click)="delete(row.id)"class="btn btn-danger " 
+               role="button">DELETE</a> |
             </tr>
           </tbody>
     </table>

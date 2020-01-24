@@ -16,31 +16,44 @@ import { environment } from 'src/environments/environment';
 
 export class ServiceUService {
 
-  constructor( private http: HttpClient) { 
+  constructor(private http: HttpClient) {
 
   }
 
-  getUsers(){
+  getUsers() {
     return this.http.get(`${environment.BaseUrl}User`);
   }
 
 
+  getUserID(id: number) {
 
-  getUserID(id:number){
-   
     const url = (`${environment.BaseUrl}User/${id}`);
     return this.http.get<User>(url);
-  }  
-
-
-
-  putUser(user: User){
-    const url = (`${environment.BaseUrl}User/${user.ID}`);
-    return this.http.put<User>(url,user);
   }
 
 
-  postUser(user: User){
+  getUserDebts(id: number) {
+
+    const url = (`${environment.BaseUrl}Validator/${id}`);
+    return this.http.get<Object>(url);
+  }
+
+
+  getUserActiveLoans(id: number) {
+
+    const url = (`${environment.BaseUrl}Validator/${id}`);
+    return this.http.post<Object>(url, "{}");
+  }
+
+
+
+  putUser(user: User) {
+    const url = (`${environment.BaseUrl}User/${user.ID}`);
+    return this.http.put<User>(url, user);
+  }
+
+
+  postUser(user: User) {
     const url = (`${environment.BaseUrl}User`);
     return this.http.post(url, user);
   }
@@ -55,10 +68,12 @@ export class ServiceUService {
 
   updateUser(user: User) {
     const url = (`${environment.BaseUrl}User`);
-    console.log("++++******++++++");
-    console.log(url);
     return this.http.put<User>(url, user);
   }
+
+
+
+
 
 
 }

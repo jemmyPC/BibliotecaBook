@@ -18,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { UserDetailsComponent } from './User/user-details/user-details.component';
 import { BookDetailsComponent } from './Book/book-details/book-details.component';
 import { TestValidatorComponent } from './test-validator/test-validator.component';
+import { UserValidatorComponent } from './User/user-validator/user-validator.component';
+import { UserValidatorDebtsComponent } from './User/user-validator-debts/user-validator-debts.component';
 
 
 
@@ -36,23 +38,25 @@ import { TestValidatorComponent } from './test-validator/test-validator.componen
     TopNavVarComponent,
     UserDetailsComponent,
     BookDetailsComponent,
-    TestValidatorComponent
-    
+    TestValidatorComponent,
+    UserValidatorComponent,
+    UserValidatorDebtsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-  
 
     RouterModule.forRoot([
       { path: 'Validator', component: TestValidatorComponent },
       { path: 'User', component: UserListComponent },
       { path: 'User/Create', component: UserCreateComponent },
       { path: 'User/Edit/:id', component: UserEditComponent },
-      { path: 'User/Detail/:id', component: UserDetailsComponent },
+      { path: 'User/Details/:id', component: UserDetailsComponent },
 
+      { path: 'User/Details/UserValidator/:id', component: UserValidatorComponent },
+      { path: 'User/Details/Debts/:id', component: UserValidatorDebtsComponent },
 
       { path: 'Book', component: BookListComponent },
       { path: 'Book/Create', component: BookCreateComponent },
@@ -61,7 +65,6 @@ import { TestValidatorComponent } from './test-validator/test-validator.componen
 
       { path: 'Loan', component: LoanListComponent },
       { path: 'Loan/Create', component: LoanCreateComponent },
-    
 
       { path: 'Home', component: HomeComponent },
       { path: '', component: HomeComponent }

@@ -29,19 +29,9 @@ export class BookCreateComponent implements OnInit {
   print() {
     this.postBook.postBook(this.newBook).subscribe(reponse => {
 
-      let data = JSON.parse(JSON.stringify(reponse));
+      window.alert("Book added");
+      this.router.navigateByUrl('/Book');
 
-      for (const key in this.err) {
-        this.err[key] = "";
-      }
-      for (const key in data) {
-        this.err["err" + key] = data[key];
-      }
-      if (data["OK"] == "OK") {
-        window.alert("Book added");
-        this.router.navigateByUrl('/Book');
-      }
-     
     }, error => {
       const json = error.error;
       console.log(json);

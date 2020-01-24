@@ -29,28 +29,27 @@ export class BookListComponent implements OnInit {
       );
   }
 
-  AddBook(Id) {
-
-
-
-    this.b.Id = Id;
-    this.b.Description = null;
-    this.b.Quantity = 1;
-    this.b.Autor = "1";
-    this.b.Title = "2";
-    this.b.Edition = "3";
-
-    this.getBook.updateBook(this.b).subscribe(reponse => {
-      console.log("works");
-      let data = JSON.parse(JSON.stringify(reponse));
-      if ("OK" in data) {
+  handleBook(id, action){
+    this.getBook.getBookID(id).subscribe(bookR => {
+      bookR["description"] = bookR["description"] + action;
+      this.getBook.updateBook(bookR).subscribe(reponse => {
         this.showConfig();
-      } else {
-        window.alert(data["Quantity"]);
-      }
+  
+      }, error => { window.alert(error.error["Quantity"]); }, () => { });
+  
+    }, error => { console.log(error) }, () => { });
+  
+  }
 
-    }, error => { console.log("error") }, () => { });
+  AddBook(id) {
 
+    this.handleBook(id, "+1");
+
+
+  }
+  
+  deleteBook(id) {
+    this.handleBook(id, "-1");
   }
 
 }

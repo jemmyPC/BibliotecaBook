@@ -8,7 +8,7 @@ import { ServiceLoanService } from 'src/app/Services/service-loan.service';
 })
 export class LoanListComponent implements OnInit {
 
-loan: any;
+  loan: any;
   loans: any;
 
   constructor(private getLoan: ServiceLoanService) { }
@@ -32,10 +32,10 @@ loan: any;
 
   deliver(LoanId) {
 
-     this.loan = this.loans.filter(loan => loan.id == LoanId);
-      this.getLoan.putDeliver(this.loan).subscribe(reponse => {
+    this.loan = this.loans.filter(loan => loan.id == LoanId);
+    this.getLoan.putDeliver(this.loan).subscribe(reponse => {
       this.showConfig();
-    }, error => { console.log("error") }, () => { });
+    }, error => { console.log("error")}, () => { });
 
   }
 

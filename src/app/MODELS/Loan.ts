@@ -5,9 +5,8 @@ export class Loan {
   UserID: number
   DateCreate: number
   DateFinish: number
-  Quantity: number
   StatusId: number
-  Price: number
+  Debt: number
   IdBook: number
   IsActive : boolean
 

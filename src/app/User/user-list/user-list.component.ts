@@ -27,6 +27,23 @@ export class UserListComponent implements OnInit {
       },(error)=>console.log(error)
       );
   }
+  delete(id){
+    this.getUsers.getUserID(id)
+      .subscribe((user) => {
+        console.log(user);
+        user.IsActive = false;
+        
+        this.getUsers.updateUser(user).subscribe((r) => {
+          window.alert(user["name"]+" "+user["lastName"]+" was deleted");
+          this.showConfig();
+        },(error)=>{window.alert(error.error["Debt"]);});
+
+        
+      },(error)=>console.log(error)
+      );
+
+
+  }
 
 }
 
